@@ -30,7 +30,7 @@ int main(int argc,char *argv[])
      while((len=read(pipefd[0],buf,sizeof(buf)))>0)
         write(STDOUT_FILENO,buf,len);
      write(STDOUT_FILENO,"\n",1);
-     close(pipefd[1]);
+     close(pipefd[0]);
    }
   else{
   //在父进程中,关闭父读
